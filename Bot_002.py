@@ -110,6 +110,7 @@ print('${} allowed for each ticker, or {}%.'.format(float(account.cash)/len(tick
 print("status: {}".format(account.status))
 print("trading blocked: {}".format(account.trading_blocked))
 print()
+
 ## check current positions ##
 # Get a list of all of our positions.
 portfolio = api.list_positions()
@@ -118,17 +119,20 @@ for position in portfolio:
     print("I own {} shares of {}.".format(position.qty, position.symbol))
 
 print()
+print()
 
 
 ## main loop that runs. it waits will there is 15 minutes left in the trading day ##
 minutes = time_to_market_close()
 while minutes > 15:
     minutes = time_to_market_close()
-    time.sleep(180)
-    print("current time: {}".format(minutes))
+    time.sleep(300)
+#    print("minutes left: {}".format(round(minutes,1)))
+    print("hours left: {}".format(round(minutes/60,2)))
     
 print()    
 print('it left the loop!!')
+print()
 print()
 
 
