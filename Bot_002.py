@@ -126,12 +126,13 @@ print()
 minutes = time_to_market_close()
 while minutes > 15:
     minutes = time_to_market_close()
-    time.sleep(180)
-    print("minutes left: {}".format(round(minutes,1)))
-    print("hours left: {}".format(round(minutes,1)/60))
+    time.sleep(300)
+#    print("minutes left: {}".format(round(minutes,1)))
+    print("hours left: {}".format(round(minutes/60,2)))
     
 print()    
 print('it left the loop!!')
+print()
 print()
 
 
